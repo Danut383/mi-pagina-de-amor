@@ -1,0 +1,37 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f0c0e0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.contenido h1 {
+    color: #d10056;
+}
+
+.galeria img {
+    width: 100px; /* O el tamaño que prefieras */
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.1);
+}
+
+.mensaje-oculto {
+    display: none;
+    color: #d10056;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .galeria img {
+        width: 80px; /* Tamaño más pequeño para dispositivos móviles */
+    }
+}
