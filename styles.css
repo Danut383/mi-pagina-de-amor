@@ -1,37 +1,70 @@
+/* Estilos generales */
 body, html {
-    height: 100%;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #f0c0e0;
+    padding: 0;
+    background-color: #f0c0e0; /* Color de fondo */
     font-family: 'Arial', sans-serif;
-    text-align: center;
+    text-align: center; /* Centra el texto */
+}
+
+/* Animación para que el título 'palpite' */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 .contenido h1 {
-    color: #d10056;
+    color: #d10056; /* Color del texto */
+    margin: 0;
+    padding: 20px 0; /* Espaciado superior e inferior */
+    font-size: 2em; /* Tamaño del texto */
+    animation: pulse 2s infinite; /* Aplica la animación definida */
+}
+
+/* Estilos para la galería de imágenes */
+.galeria {
+    margin: 20px 0; /* Espaciado superior e inferior */
 }
 
 .galeria img {
-    width: 100px; /* O el tamaño que prefieras */
-    margin: 10px;
-    transition: transform 0.3s ease;
+    width: 100px; /* Ancho de las imágenes */
+    margin: 0 10px; /* Espaciado entre imágenes */
+    border: 3px solid #d10056; /* Borde de las imágenes */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: transform 0.3s ease; /* Suaviza la transformación */
 }
 
 .galeria img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Escala la imagen al pasar el mouse */
 }
 
+/* Estilo para el mensaje que aparece al hacer clic */
 .mensaje-oculto {
-    display: none;
-    color: #d10056;
-    margin-top: 20px;
+    display: none; /* Oculta el mensaje inicialmente */
+    color: #d10056; /* Color del texto */
+    margin-top: 20px; /* Espaciado superior */
+    font-size: 1.5em; /* Tamaño del texto */
 }
 
+/* Responsividad para diferentes tamaños de pantalla */
 @media (max-width: 768px) {
+    .contenido h1 {
+        font-size: 1.5em; /* Tamaño del texto más pequeño para dispositivos móviles */
+    }
+
     .galeria img {
-        width: 80px; /* Tamaño más pequeño para dispositivos móviles */
+        width: 80px; /* Ancho más pequeño para imágenes en dispositivos móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .contenido h1 {
+        font-size: 1em; /* Tamaño del texto aún más pequeño para teléfonos */
+    }
+
+    .galeria img {
+        width: 60px; /* Ancho aún más pequeño para imágenes en teléfonos */
     }
 }
